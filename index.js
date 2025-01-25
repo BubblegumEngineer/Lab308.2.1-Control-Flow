@@ -89,3 +89,53 @@ if (wk3GardenArea > 80) {
 
 console.log("=================================");
 
+// Part 2
+
+console.log("Part 2: Thinking Bigger");
+
+console.log("=================================");
+
+//Using the logic you have already created, determine:
+// The amount of additional space that would be required if the scientists were to start with 100 plants, and did not prune them for 10 weeks.
+
+
+let numPlants100 = 100;
+let newPlantSpace100 = numPlants100 * plantSize; //80
+console.log("The starting plant space for 100 plants for week 0 is: " + newPlantSpace100 + " square meters.");
+
+let week = 0;
+do {
+    newPlantSpace100 *= 2;
+    week ++;
+} while (week < 10);
+
+    console.log("At week "+ week + " it needs " + newPlantSpace100 + " square meters.");
+
+
+// If the space remained circular, what would be the radius of this expanded garden?
+// const area = PI * radius * radius;
+
+let radius100 = Math.sqrt(newPlantSpace100/Math.PI);
+console.log("The radius of this expanded garden would be: " + radius100 + " meters.");
+
+console.log("=================================");
+
+// Part 3
+
+console.log("Part 3: Errors in Judgement");
+
+console.log("=================================");
+
+
+// The scientists decided not to listen to your recommendations, and have instead started with 100 plants in the original 5-meter-radius garden.
+// Use try and catch to wrap your work in an error-handling block. If the amount of space required to hold the originally provided number of plants exceeds the amount of space available, throw a new error and log an appropriate message.
+
+
+try {
+    if(radius100 > radius) throw "Not enough space.";
+  } 
+// catch only happens when the try block is thrown
+// if throw happens, catch happens. 
+  catch (error) {
+    console.log("An error occurred: Not enough space available.");
+  }
